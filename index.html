@@ -15,937 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* === CORE ULTRA PREMIUM STYLES === */
-      :root {
-        --primary: #020617;
-        --primary-light: #2563eb;
-        --accent: #f59e0b;
-        --accent-glow: rgba(245, 158, 11, 0.5);
-        --bg-app: #f8fafc;
-        --surface: #ffffff;
-        --text-dark: #0f172a;
-        --text-muted: #64748b;
-        --border: #e2e8f0;
-        --success: #10b981;
-        --danger: #f43f5e;
-        --shadow-float: 0 20px 40px rgba(37, 99, 235, 0.12);
-        --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.04);
-        --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        -webkit-tap-highlight-color: transparent;
-      }
-      body {
-        background-color: #cbd5e1;
-        display: flex;
-        justify-content: center;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        overscroll-behavior-y: none;
-        user-select: none;
-      }
-      input,
-      select {
-        user-select: auto;
-      }
-
-      .app-container {
-        width: 100%;
-        max-width: 480px;
-        background-color: var(--bg-app);
-        min-height: 100vh;
-        position: relative;
-        box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
-        padding-bottom: calc(100px + env(safe-area-inset-bottom));
-      }
-
-      /* === ANIMASI HEADER LUXURY === */
-      .header-section {
-        background: linear-gradient(135deg, #020617, #1e3a8a, #0ea5e9, #0f172a);
-        background-size: 300% 300%;
-        animation: auroraBg 15s ease infinite;
-        position: relative;
-        overflow: hidden;
-        border-radius: 0 0 40px 40px;
-        padding: 45px 24px 85px 24px;
-        color: white;
-        box-shadow: 0 15px 35px rgba(2, 6, 23, 0.4);
-      }
-      @keyframes auroraBg {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(40px);
-        opacity: 0.6;
-        animation: floatOrb 8s infinite alternate;
-      }
-      .orb-1 {
-        width: 160px;
-        height: 160px;
-        background: #8b5cf6;
-        top: -50px;
-        left: -20px;
-      }
-      .orb-2 {
-        width: 140px;
-        height: 140px;
-        background: #38bdf8;
-        bottom: -20px;
-        right: -30px;
-        animation-delay: -3s;
-      }
-      @keyframes floatOrb {
-        0% {
-          transform: translateY(0) scale(1);
-        }
-        100% {
-          transform: translateY(30px) scale(1.1);
-        }
-      }
-
-      .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-        position: relative;
-        z-index: 2;
-      }
-      .brand {
-        font-size: 28px;
-        font-weight: 900;
-        letter-spacing: -1px;
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      }
-      .brand span {
-        color: var(--accent);
-      }
-
-      .user-profile {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 6px 16px 6px 6px;
-        border-radius: 50px;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        cursor: pointer;
-        transition: var(--transition);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      .user-profile:active {
-        transform: scale(0.92);
-      }
-      .avatar {
-        width: 36px;
-        height: 36px;
-        background: linear-gradient(135deg, var(--accent), #d97706);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        color: white;
-        box-shadow: 0 0 15px var(--accent-glow);
-      }
-
-      .slogan {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 13px;
-        font-weight: 800;
-        color: var(--accent);
-        background: rgba(245, 158, 11, 0.15);
-        padding: 6px 14px;
-        border-radius: 50px;
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        margin-top: 10px;
-        position: relative;
-        z-index: 2;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 0 15px var(--accent-glow);
-        animation: pulseSlogan 2s infinite;
-      }
-      @keyframes pulseSlogan {
-        0% {
-          box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
-        }
-        50% {
-          box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
-        }
-        100% {
-          box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
-        }
-      }
-
-      /* === KARTU SALDO MENGKILAP BERANIMASI === */
-      .balance-card {
-        background: rgba(255, 255, 255, 0.95);
-        margin: -65px 24px 24px 24px;
-        padding: 26px 24px;
-        border-radius: 28px;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 10;
-        overflow: hidden;
-        border: 2px solid transparent;
-        animation: cardGlowPulse 3s infinite alternate;
-      }
-      @keyframes cardGlowPulse {
-        0% {
-          box-shadow:
-            0 10px 30px rgba(37, 99, 235, 0.2),
-            inset 0 0 10px rgba(245, 158, 11, 0.1);
-          border-color: rgba(59, 130, 246, 0.3);
-        }
-        100% {
-          box-shadow:
-            0 15px 40px rgba(37, 99, 235, 0.5),
-            inset 0 0 20px rgba(245, 158, 11, 0.3);
-          border-color: rgba(245, 158, 11, 0.6);
-        }
-      }
-
-      .balance-card::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -150%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 1) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: skewX(-25deg);
-        animation: shinePremium 4s infinite;
-        pointer-events: none;
-        z-index: 1;
-      }
-      @keyframes shinePremium {
-        0%,
-        15% {
-          left: -150%;
-        }
-        85%,
-        100% {
-          left: 200%;
-        }
-      }
-
-      .balance-info p {
-        color: var(--text-muted);
-        font-size: 13px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        position: relative;
-        z-index: 2;
-      }
-
-      #display-balance {
-        color: var(--text-dark);
-        font-size: 30px;
-        font-weight: 900;
-        letter-spacing: -1px;
-        transition: var(--transition);
-        position: relative;
-        z-index: 2;
-        animation: textSparkle 2s infinite alternate;
-      }
-      @keyframes textSparkle {
-        0% {
-          text-shadow: 0 0 0px rgba(37, 99, 235, 0);
-        }
-        100% {
-          text-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
-        }
-      }
-
-      .eye-btn {
-        cursor: pointer;
-        color: var(--text-muted);
-        font-size: 16px;
-        transition: var(--transition);
-        padding: 4px;
-      }
-      .eye-btn:active {
-        transform: scale(0.8);
-        color: var(--primary-light);
-      }
-
-      .btn-topup {
-        background: linear-gradient(135deg, var(--primary-light), #1e3a8a);
-        color: white;
-        border: none;
-        padding: 14px 22px;
-        border-radius: 20px;
-        font-weight: 800;
-        font-size: 14px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        position: relative;
-        z-index: 2;
-        animation: pulseBtn 2s infinite;
-      }
-      @keyframes pulseBtn {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
-          transform: scale(1.05);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-          transform: scale(1);
-        }
-      }
-      .btn-topup:active {
-        transform: scale(0.92);
-        animation: none;
-      }
-
-      /* === GRID MENU PREMIUM === */
-      .section-title {
-        padding: 0 24px;
-        font-size: 18px;
-        color: var(--text-dark);
-        margin-bottom: 20px;
-        font-weight: 900;
-        letter-spacing: -0.5px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .section-title::before {
-        content: "";
-        width: 4px;
-        height: 18px;
-        background: var(--accent);
-        border-radius: 4px;
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        padding: 0 24px;
-        margin-bottom: 30px;
-      }
-      .service-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-      .service-item:active {
-        transform: scale(0.9);
-      }
-
-      .service-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        color: white;
-        font-size: 24px;
-        transition: var(--transition);
-        position: relative;
-        animation: iconVibrate 5s infinite;
-      }
-      .service-item:nth-child(1) .service-icon {
-        animation-delay: 0s;
-      }
-      .service-item:nth-child(2) .service-icon {
-        animation-delay: 0.2s;
-      }
-      .service-item:nth-child(3) .service-icon {
-        animation-delay: 0.4s;
-      }
-      .service-item:nth-child(4) .service-icon {
-        animation-delay: 0.6s;
-      }
-      .service-item:nth-child(5) .service-icon {
-        animation-delay: 0.8s;
-      }
-      .service-item:nth-child(6) .service-icon {
-        animation-delay: 1s;
-      }
-      .service-item:nth-child(7) .service-icon {
-        animation-delay: 1.2s;
-      }
-      .service-item:nth-child(8) .service-icon {
-        animation-delay: 1.4s;
-      }
-
-      @keyframes iconVibrate {
-        0%,
-        85% {
-          transform: scale(1) rotate(0deg);
-          filter: brightness(1);
-        }
-        88% {
-          transform: scale(1.15) rotate(-6deg);
-          filter: brightness(1.3);
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-        }
-        91% {
-          transform: scale(1.15) rotate(6deg);
-          filter: brightness(1.3);
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-        }
-        94% {
-          transform: scale(1.15) rotate(-6deg);
-          filter: brightness(1.3);
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-        }
-        97% {
-          transform: scale(1.15) rotate(6deg);
-          filter: brightness(1.3);
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-        }
-        100% {
-          transform: scale(1) rotate(0deg);
-          filter: brightness(1);
-          box-shadow: none;
-        }
-      }
-
-      .service-icon::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-        opacity: 0;
-        transition: var(--transition);
-        background: inherit;
-        filter: blur(12px);
-        z-index: -1;
-      }
-      .service-item:hover .service-icon {
-        transform: translateY(-5px);
-        animation: none;
-      }
-      .service-item:hover .service-icon::before {
-        opacity: 0.7;
-        transform: translateY(5px);
-      }
-      .service-item.active-service .service-icon {
-        transform: scale(1.1);
-        box-shadow:
-          0 0 0 4px rgba(255, 255, 255, 1),
-          0 0 0 8px rgba(37, 99, 235, 0.2);
-        animation: none;
-      }
-      .service-item span {
-        font-size: 13px;
-        font-weight: 800;
-        color: var(--text-dark);
-        text-align: center;
-      }
-
-      .bg-pulsa {
-        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      }
-      .bg-data {
-        background: linear-gradient(135deg, #a855f7, #7e22ce);
-      }
-      .bg-pln {
-        background: linear-gradient(135deg, #fbbf24, #d97706);
-      }
-      .bg-game {
-        background: linear-gradient(135deg, #f43f5e, #be123c);
-      }
-      .bg-wallet {
-        background: linear-gradient(135deg, #34d399, #059669);
-      }
-      .bg-bank {
-        background: linear-gradient(135deg, #818cf8, #4f46e5);
-      }
-      .bg-toll {
-        background: linear-gradient(135deg, #fb923c, #c2410c);
-      }
-      .bg-bill {
-        background: linear-gradient(135deg, #38bdf8, #0369a1);
-      }
-
-      /* === FORM & INPUT MODERN === */
-      .form-container {
-        background: var(--surface);
-        margin: 0 24px 24px 24px;
-        padding: 28px 24px;
-        border-radius: 32px;
-        box-shadow: var(--shadow-card);
-        display: none;
-        border: 1px solid rgba(255, 255, 255, 0.8);
-      }
-      .input-group {
-        margin-bottom: 20px;
-        position: relative;
-      }
-      .input-group label {
-        display: block;
-        font-size: 14px;
-        color: var(--text-dark);
-        margin-bottom: 12px;
-        font-weight: 800;
-      }
-      .input-wrapper {
-        position: relative;
-        width: 100%;
-        display: flex;
-        align-items: center;
-      }
-      .input-wrapper input {
-        padding-right: 90px;
-      }
-
-      .input-group input,
-      .input-group select {
-        width: 100%;
-        padding: 18px 20px;
-        border: 2px solid var(--border);
-        border-radius: 18px;
-        font-size: 16px;
-        font-weight: 800;
-        outline: none;
-        transition: var(--transition);
-        background: #f8fafc;
-        color: var(--text-dark);
-        letter-spacing: 0.5px;
-      }
-      .input-group input:focus,
-      .input-group select:focus {
-        border-color: var(--primary-light);
-        background: var(--surface);
-        box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.1);
-        transform: translateY(-2px);
-      }
-
-      .operator-badge {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 11px;
-        font-weight: 900;
-        padding: 6px 12px;
-        border-radius: 10px;
-        color: white;
-        display: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 5;
-      }
-      @keyframes popIn {
-        0% {
-          transform: translateY(-50%) scale(0.5);
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(-50%) scale(1);
-          opacity: 1;
-        }
-      }
-
-      .nominal-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        margin-bottom: 28px;
-        margin-top: 12px;
-        max-height: 380px;
-        overflow-y: auto;
-        padding-right: 6px;
-      }
-      .nominal-grid::-webkit-scrollbar {
-        width: 5px;
-      }
-      .nominal-grid::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 10px;
-      }
-      .nominal-card {
-        border: 2px solid var(--border);
-        padding: 18px 14px;
-        border-radius: 20px;
-        text-align: center;
-        cursor: pointer;
-        transition: var(--transition);
-        background: var(--surface);
-        position: relative;
-        overflow: hidden;
-      }
-      .nominal-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(37, 99, 235, 0.1),
-          rgba(37, 99, 235, 0)
-        );
-        opacity: 0;
-        transition: var(--transition);
-      }
-      .nominal-card.active {
-        border-color: var(--primary-light);
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-float);
-      }
-      .nominal-card.active::before {
-        opacity: 1;
-      }
-      .nominal-card h4 {
-        color: var(--text-dark);
-        font-size: 15px;
-        font-weight: 900;
-        margin-bottom: 6px;
-        position: relative;
-        z-index: 2;
-      }
-      .nominal-card p {
-        color: var(--primary-light);
-        font-size: 14px;
-        font-weight: 800;
-        position: relative;
-        z-index: 2;
-      }
-
-      .btn-primary {
-        width: 100%;
-        background: linear-gradient(
-          135deg,
-          var(--primary-light),
-          var(--primary)
-        );
-        color: white;
-        padding: 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 17px;
-        font-weight: 900;
-        cursor: pointer;
-        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        letter-spacing: 0.5px;
-      }
-      .btn-primary:active {
-        transform: scale(0.96);
-        box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
-      }
-
-      /* === GAME GRID === */
-      .game-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin-bottom: 24px;
-      }
-      .game-card {
-        border: 2px solid var(--border);
-        padding: 14px 8px;
-        border-radius: 18px;
-        text-align: center;
-        cursor: pointer;
-        transition: var(--transition);
-        background: var(--surface);
-      }
-      .game-card.active {
-        border-color: var(--primary-light);
-        background: #eff6ff;
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
-        transform: translateY(-4px);
-      }
-      .game-card img {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        margin-bottom: 10px;
-        object-fit: cover;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-      .game-card span {
-        display: block;
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--text-dark);
-      }
-
-      /* === TAB DATA === */
-      .sub-tabs {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 24px;
-        background: #e2e8f0;
-        padding: 6px;
-        border-radius: 20px;
-      }
-      .sub-tab {
-        flex: 1;
-        padding: 14px;
-        border: none;
-        border-radius: 16px;
-        background: transparent;
-        color: var(--text-muted);
-        font-size: 15px;
-        font-weight: 800;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-      .sub-tab.active {
-        background: var(--surface);
-        color: var(--primary-light);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      /* === RIWAYAT === */
-      .history-container {
-        display: none;
-        padding: 24px;
-      }
-      .history-item {
-        background: var(--surface);
-        padding: 20px;
-        border-radius: 24px;
-        margin-bottom: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: var(--shadow-card);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        transition: var(--transition);
-      }
-      .history-item:active {
-        transform: scale(0.97);
-        box-shadow: var(--shadow-sm);
-      }
-      .history-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 22px;
-      }
-      .history-detail h4 {
-        font-size: 16px;
-        color: var(--text-dark);
-        font-weight: 800;
-        margin-bottom: 6px;
-      }
-      .history-detail p {
-        font-size: 13px;
-        color: var(--text-muted);
-        font-weight: 700;
-      }
-      .history-status {
-        text-align: right;
-      }
-      .history-status h4 {
-        font-size: 16px;
-        font-weight: 900;
-        margin-bottom: 8px;
-      }
-      .badge {
-        font-size: 11px;
-        padding: 6px 12px;
-        border-radius: 10px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .badge.success {
-        background: #d1fae5;
-        color: #059669;
-      }
-
-      /* === BOTTOM NAV DOCKED === */
-      .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 480px;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        display: flex;
-        justify-content: space-between;
-        padding: 14px 24px calc(14px + env(safe-area-inset-bottom)) 24px;
-        border-top: 1.5px solid rgba(0, 0, 0, 0.08);
-        border-radius: 36px 36px 0 0;
-        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08);
-        z-index: 99;
-      }
-      .nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-muted);
-        cursor: pointer;
-        font-size: 12px;
-        font-weight: 800;
-        transition: var(--transition);
-        flex: 1;
-        padding: 10px 0;
-        border-radius: 20px;
-      }
-      .nav-item i {
-        font-size: 24px;
-        display: block;
-        margin-bottom: 6px;
-        transition: var(--transition);
-      }
-      .nav-item.active {
-        color: var(--primary-light);
-        background: rgba(37, 99, 235, 0.08);
-      }
-      .nav-item.active i {
-        transform: translateY(-2px) scale(1.1);
-        text-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-      }
-
-      /* === MODALS ULTRA PREMIUM === */
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(2, 6, 23, 0.75);
-        z-index: 1000;
-        display: none;
-        justify-content: center;
-        align-items: flex-end;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-      .modal-content {
-        background: var(--surface);
-        width: 100%;
-        max-width: 480px;
-        padding: 36px 28px calc(36px + env(safe-area-inset-bottom)) 28px;
-        border-radius: 40px 40px 0 0;
-        animation: modalSpring 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        max-height: 92vh;
-        overflow-y: auto;
-        box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
-        border-top: 1px solid rgba(255, 255, 255, 0.5);
-      }
-      @keyframes modalSpring {
-        0% {
-          transform: translateY(100%);
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      .payment-method {
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        border: 2px solid var(--border);
-        border-radius: 24px;
-        margin-bottom: 16px;
-        cursor: pointer;
-        background: var(--surface);
-        transition: var(--transition);
-      }
-      .payment-method:active {
-        transform: scale(0.96);
-        border-color: var(--primary-light);
-        background: #eff6ff;
-      }
-
-      /* === RIPPLE EFFECT === */
-      .ripple {
-        position: relative;
-        overflow: hidden;
-      }
-      .ripple-effect {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
-        transform: scale(0);
-        animation: ripple-anim 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        pointer-events: none;
-      }
-      .ripple-dark .ripple-effect {
-        background: rgba(37, 99, 235, 0.15);
-      }
-      @keyframes ripple-anim {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
-
-      .fade-in {
-        animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-          filter: blur(5px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-          filter: blur(0);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="app-container">
-      <!-- === 1. BERANDA === -->
       <div id="view-home" class="fade-in">
         <div class="header-section">
           <div class="orb orb-1"></div>
@@ -984,7 +57,6 @@
           >
             Pelanggan D'Plus Store
           </h2>
-          <!-- SEMBOYAN KILAT -->
           <div class="slogan">
             <i class="fas fa-bolt" style="font-size: 16px"></i> TRANSAKSI
             SECEPAT KILAT
@@ -1001,7 +73,7 @@
                 onclick="toggleBalance(event)"
               ></i>
             </p>
-            <h3 id="display-balance">Rp 100.000</h3>
+            <h3 id="display-balance">Rp 500.000</h3>
           </div>
           <button class="btn-topup ripple" onclick="openTopUpModal()">
             <i class="fas fa-plus-circle" style="font-size: 16px"></i> Top Up
@@ -1054,7 +126,6 @@
           </div>
         </div>
 
-        <!-- FORM TRANSAKSI -->
         <div class="form-container fade-in" id="form-transaction">
           <h3
             class="section-title"
@@ -1065,8 +136,8 @@
           </h3>
 
           <div class="input-group" id="provider-group" style="display: none">
-            <label id="provider-label">Pilih Provider</label>
-            <select id="provider-select"></select>
+            <label id="provider-label">Pilih Provider</label
+            ><select id="provider-select"></select>
           </div>
 
           <div id="game-selector-group" style="display: none">
@@ -1146,15 +217,48 @@
             </button>
           </div>
 
+          <div
+            class="input-group"
+            id="manual-input-group"
+            style="display: none; margin-top: 10px"
+          >
+            <label>Nominal Transfer</label>
+            <input
+              type="text"
+              inputmode="numeric"
+              id="manual-nominal"
+              placeholder="Rp 0"
+              style="font-size: 22px; font-weight: 900; color: var(--primary)"
+              oninput="checkManualBalance(this)"
+            />
+            <p
+              id="saldo-warning"
+              style="
+                color: var(--danger);
+                font-size: 12px;
+                margin-top: 8px;
+                display: none;
+                font-weight: 800;
+              "
+            >
+              <i class="fas fa-exclamation-circle"></i> Saldo Anda tidak
+              mencukupi!
+            </p>
+          </div>
+
           <div class="nominal-grid" id="product-container"></div>
-          <button class="btn-primary ripple" onclick="openPaymentModal()">
+
+          <button
+            class="btn-primary ripple"
+            onclick="openPaymentModal()"
+            style="margin-top: 10px"
+          >
             Lanjutkan Pembayaran
             <i class="fas fa-arrow-right" style="margin-left: 8px"></i>
           </button>
         </div>
       </div>
 
-      <!-- === 2. RIWAYAT TRANSAKSI === -->
       <div
         id="view-history"
         class="history-container fade-in"
@@ -1190,7 +294,6 @@
         </div>
       </div>
 
-      <!-- === 3. PROFIL PENGGUNA DINAMIS === -->
       <div
         id="view-profile"
         class="history-container fade-in"
@@ -1254,7 +357,6 @@
             >
               Pengguna
             </h3>
-
             <div
               style="
                 background: white;
@@ -1297,7 +399,6 @@
                 <i class="fas fa-id-card" style="margin-right: 6px"></i>
                 Identitas Pribadi
               </p>
-
               <div
                 style="
                   display: flex;
@@ -1461,7 +562,6 @@
         </div>
       </div>
 
-      <!-- === BOTTOM NAV DOCKED === -->
       <div class="bottom-nav">
         <div
           class="nav-item ripple ripple-dark active"
@@ -1486,8 +586,6 @@
         </div>
       </div>
 
-      <!-- === MODALS === -->
-      <!-- Modal Login & Register Dinamis -->
       <div class="modal-overlay" id="modal-login">
         <div class="modal-content">
           <div
@@ -1514,9 +612,8 @@
               id="btn-tab-login"
               onclick="toggleAuth('login')"
             >
-              Masuk
-            </button>
-            <button
+              Masuk</button
+            ><button
               class="sub-tab ripple"
               id="btn-tab-register"
               onclick="toggleAuth('register')"
@@ -1524,7 +621,6 @@
               Daftar Baru
             </button>
           </div>
-          <!-- FORM LOGIN -->
           <div id="form-login-area">
             <div class="input-group">
               <label>Nomor HP / Email</label
@@ -1542,7 +638,6 @@
               Sekarang
             </button>
           </div>
-          <!-- FORM DAFTAR (MENYIMPAN DATA) -->
           <div id="form-register-area" style="display: none">
             <div class="input-group">
               <label>Nama Lengkap</label
@@ -1566,6 +661,7 @@
                 type="password"
                 id="reg-pin"
                 placeholder="6 Digit Angka"
+                maxlength="6"
               />
             </div>
             <button
@@ -1582,7 +678,6 @@
         </div>
       </div>
 
-      <!-- Modal Top Up -->
       <div class="modal-overlay" id="modal-topup">
         <div class="modal-content">
           <div
@@ -1601,14 +696,14 @@
             ></i>
           </div>
           <div class="input-group" style="margin-bottom: 24px">
-            <label>Nominal Top Up</label>
-            <input
+            <label>Nominal Top Up</label
+            ><input
               type="text"
               inputmode="numeric"
               id="input-topup"
               placeholder="Minimal Rp 10.000"
               style="font-size: 24px; font-weight: 900; letter-spacing: 1px"
-              oninput="formatRupiahInput(this)"
+              oninput="formatTopUpInput(this)"
             />
           </div>
           <label
@@ -1661,7 +756,6 @@
         </div>
       </div>
 
-      <!-- Modal Gateway Simulasi -->
       <div class="modal-overlay" id="modal-gateway">
         <div class="modal-content" style="text-align: center">
           <div
@@ -1704,6 +798,7 @@
               border: 2px dashed var(--primary-light);
               margin-bottom: 28px;
               box-shadow: var(--shadow-card);
+              text-align: left;
             "
           >
             <p
@@ -1716,18 +811,61 @@
               "
             >
               <i class="fas fa-university" style="margin-right: 6px"></i>
-              Virtual Account BCA
+              Transfer Bank BCA
             </p>
             <h2
               style="
-                font-size: 30px;
+                font-size: 28px;
                 font-weight: 900;
                 color: var(--primary);
                 letter-spacing: 2px;
-                margin: 16px 0;
+                margin: 8px 0;
               "
             >
-              3901 0812 3456
+              0293145692
+            </h2>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--text-muted);
+                font-weight: 800;
+                margin-bottom: 16px;
+              "
+            >
+              A/N: DENI
+            </p>
+            <div
+              style="
+                border-top: 1px solid var(--border);
+                padding-top: 16px;
+                margin-bottom: 16px;
+              "
+            ></div>
+            <p
+              style="
+                font-size: 13px;
+                font-weight: 900;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              <i
+                class="fas fa-wallet"
+                style="margin-right: 6px; color: #0ea5e9"
+              ></i>
+              E-Wallet DANA
+            </p>
+            <h2
+              style="
+                font-size: 26px;
+                font-weight: 900;
+                color: #0ea5e9;
+                letter-spacing: 1px;
+                margin: 8px 0;
+              "
+            >
+              +6282148748663
             </h2>
             <p
               style="
@@ -1736,16 +874,17 @@
                 font-weight: 800;
               "
             >
-              A/N: DPLUS Store PENGGUNA
+              A/N: DENI
             </p>
             <div
               style="
                 margin-top: 20px;
                 padding-top: 20px;
-                border-top: 1px solid var(--border);
+                border-top: 1px dashed var(--border);
                 font-size: 26px;
                 font-weight: 900;
                 color: var(--text-dark);
+                text-align: center;
               "
               id="gateway-amount"
             >
@@ -1760,8 +899,8 @@
             "
             onclick="successTopUp()"
           >
-            <i class="fas fa-check-circle" style="margin-right: 8px"></i>
-            Simulasi Bayar Berhasil
+            <i class="fas fa-check-circle" style="margin-right: 8px"></i> Saya
+            Sudah Transfer
           </button>
           <button
             class="btn-primary ripple"
@@ -1779,7 +918,6 @@
         </div>
       </div>
 
-      <!-- Modal Pembayaran Transaksi -->
       <div class="modal-overlay" id="modal-payment">
         <div class="modal-content">
           <div
@@ -1833,7 +971,7 @@
                   color: var(--primary);
                 "
               >
-                Saldo D'Plus Store
+                Saldo D'Plus
               </h4>
               <p
                 style="
@@ -1859,7 +997,49 @@
             class="payment-method ripple ripple-dark"
             onclick="
               alert(
-                'Silakan Top Up Saldo Anda terlebih dahulu agar lebih mudah!',
+                'Silakan transfer ke Bank BCA 0293145692 (A/N DENI) sejumlah total tagihan Anda.\n\nJangan lupa konfirmasi ke Admin jika sudah transfer!',
+              );
+              closeModal('modal-payment');
+            "
+          >
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                background: #e0e7ff;
+                border-radius: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 18px;
+              "
+            >
+              <i
+                class="fas fa-university"
+                style="font-size: 24px; color: var(--primary-light)"
+              ></i>
+            </div>
+            <div style="flex: 1">
+              <h4 style="font-size: 17px; font-weight: 800; margin-bottom: 4px">
+                Bank BCA
+              </h4>
+              <p
+                style="
+                  font-size: 12px;
+                  color: var(--text-muted);
+                  font-weight: 600;
+                "
+              >
+                0293145692 (A/N DENI)
+              </p>
+            </div>
+            <i class="fas fa-chevron-right" style="color: var(--border)"></i>
+          </div>
+          <div
+            class="payment-method ripple ripple-dark"
+            onclick="
+              alert(
+                'Silakan transfer ke DANA +6282148748663 (A/N DENI) sejumlah total tagihan Anda.\n\nJangan lupa konfirmasi ke Admin jika sudah transfer!',
               );
               closeModal('modal-payment');
             "
@@ -1877,13 +1057,13 @@
               "
             >
               <i
-                class="fas fa-qrcode"
+                class="fas fa-money-bill-wave"
                 style="font-size: 24px; color: #059669"
               ></i>
             </div>
             <div style="flex: 1">
               <h4 style="font-size: 17px; font-weight: 800; margin-bottom: 4px">
-                QRIS / E-Wallet
+                E-Wallet DANA
               </h4>
               <p
                 style="
@@ -1892,594 +1072,88 @@
                   font-weight: 600;
                 "
               >
-                Gopay, OVO, DANA
+                +6282148748663 (A/N DENI)
               </p>
             </div>
             <i class="fas fa-chevron-right" style="color: var(--border)"></i>
           </div>
         </div>
       </div>
+
+      <div class="modal-overlay" id="modal-pin-verify">
+        <div class="modal-content" style="text-align: center">
+          <div
+            style="
+              width: 60px;
+              height: 60px;
+              background: #fee2e2;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto 16px auto;
+            "
+          >
+            <i
+              class="fas fa-shield-alt"
+              style="font-size: 24px; color: var(--danger)"
+            ></i>
+          </div>
+          <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 10px">
+            Verifikasi PIN
+          </h3>
+          <p
+            style="
+              font-size: 14px;
+              color: var(--text-muted);
+              margin-bottom: 24px;
+              font-weight: 600;
+            "
+          >
+            Masukkan 6 digit PIN keamanan akun Anda
+          </p>
+
+          <input
+            type="password"
+            id="verify-pin-input"
+            placeholder="••••••"
+            maxlength="6"
+            inputmode="numeric"
+            style="
+              width: 100%;
+              text-align: center;
+              letter-spacing: 12px;
+              font-size: 32px;
+              padding: 16px;
+              border-radius: 20px;
+              border: 2px solid var(--border);
+              margin-bottom: 24px;
+              outline: none;
+              color: var(--primary);
+            "
+          />
+
+          <button class="btn-primary ripple" onclick="verifyAndPay()">
+            <i class="fas fa-lock" style="margin-right: 8px"></i> Konfirmasi
+            Pembayaran
+          </button>
+          <button
+            class="btn-primary ripple"
+            style="
+              background: transparent;
+              color: var(--text-muted);
+              border: none;
+              margin-top: 5px;
+              box-shadow: none;
+            "
+            onclick="closeModal('modal-pin-verify')"
+          >
+            Kembali
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- === SCRIPT JAVASCRIPT === -->
-    <script>
-      // === SISTEM DATA BASE SEDERHANA ===
-      let userData = {
-        name: "Pengguna",
-        phone: "081234567890",
-        email: "user@email.com",
-      };
-
-      let isLoggedIn = false;
-      let currentBalance = 500000;
-      let isBalanceHidden = false;
-      let selectedPrice = 0,
-        selectedProductName = "",
-        currentService = "",
-        currentGame = "ml";
-      let pendingTopUpAmount = 0;
-
-      // === EFEK RIPPLE ===
-      function attachRipple() {
-        document.querySelectorAll(".ripple").forEach((button) => {
-          if (!button.hasAttribute("data-ripple")) {
-            button.setAttribute("data-ripple", "true");
-            button.addEventListener("click", function (e) {
-              let circle = document.createElement("span");
-              circle.classList.add("ripple-effect");
-              this.appendChild(circle);
-              let rect = this.getBoundingClientRect(),
-                d = Math.max(this.clientWidth, this.clientHeight);
-              circle.style.width = circle.style.height = d + "px";
-              circle.style.left = e.clientX - rect.left - d / 2 + "px";
-              circle.style.top = e.clientY - rect.top - d / 2 + "px";
-              setTimeout(() => circle.remove(), 700);
-            });
-          }
-        });
-      }
-      document.addEventListener("DOMContentLoaded", attachRipple);
-
-      // === FITUR MATA (HIDE/SHOW SALDO) ===
-      function toggleBalance(e) {
-        e.stopPropagation();
-        isBalanceHidden = !isBalanceHidden;
-        const balElement = document.getElementById("display-balance");
-        const eyeIcon = document.getElementById("eye-icon");
-        if (isBalanceHidden) {
-          balElement.innerText = "Rp •••••••";
-          eyeIcon.className = "fas fa-eye-slash eye-btn";
-        } else {
-          balElement.innerText = formatRp(currentBalance);
-          eyeIcon.className = "fas fa-eye eye-btn";
-        }
-      }
-
-      // === AUTH LOGIC ===
-      function toggleAuth(type) {
-        document
-          .getElementById("btn-tab-login")
-          .classList.toggle("active", type === "login");
-        document
-          .getElementById("btn-tab-register")
-          .classList.toggle("active", type === "register");
-        document.getElementById("form-login-area").style.display =
-          type === "login" ? "block" : "none";
-        document.getElementById("form-register-area").style.display =
-          type === "register" ? "block" : "none";
-      }
-
-      function registerUser() {
-        const nameInput = document.getElementById("reg-name").value;
-        const phoneInput = document.getElementById("reg-phone").value;
-        const emailInput = document.getElementById("reg-email").value;
-        const pinInput = document.getElementById("reg-pin").value;
-
-        if (!nameInput || !phoneInput || !emailInput || !pinInput) {
-          alert("Gagal! Harap isi semua kolom pendaftaran dengan lengkap.");
-          return;
-        }
-
-        userData.name = nameInput;
-        userData.phone = phoneInput;
-        userData.email = emailInput;
-
-        isLoggedIn = true;
-        closeModal("modal-login");
-        updateProfileUI();
-
-        document.getElementById("reg-name").value = "";
-        document.getElementById("reg-phone").value = "";
-        document.getElementById("reg-email").value = "";
-        document.getElementById("reg-pin").value = "";
-
-        alert("✅ Akun Berhasil Dibuat!\nSelamat datang, " + userData.name);
-        switchTab("profile");
-      }
-
-      function loginUser(msg) {
-        isLoggedIn = true;
-        closeModal("modal-login");
-        updateProfileUI();
-        alert(msg);
-        switchTab("profile");
-      }
-
-      function logoutUser() {
-        isLoggedIn = false;
-        alert("Berhasil keluar dengan aman.");
-        document.getElementById("header-user-text").innerText = "Masuk Akun";
-        switchTab("home");
-      }
-
-      function updateProfileUI() {
-        document.getElementById("header-user-text").innerText = userData.name;
-        document.getElementById("profile-name").innerText = userData.name;
-        document.getElementById("profile-phone").innerText = userData.phone;
-        document.getElementById("profile-email").innerText = userData.email;
-      }
-
-      // === SIMULASI TOP UP (AUTO FORMAT TITIK) ===
-      function openTopUpModal() {
-        if (!isLoggedIn) {
-          alert("Silakan Akses Akun terlebih dahulu!");
-          openModal("modal-login");
-          return;
-        }
-        document.getElementById("input-topup").value = "";
-        document
-          .querySelectorAll(".topup-card")
-          .forEach((c) => c.classList.remove("active"));
-        openModal("modal-topup");
-      }
-
-      function formatRupiahInput(element) {
-        let value = element.value.replace(/[^,\d]/g, "").toString();
-        let split = value.split(",");
-        let sisa = split[0].length % 3;
-        let rupiah = split[0].substr(0, sisa);
-        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        if (ribuan) {
-          let separator = sisa ? "." : "";
-          rupiah += separator + ribuan.join(".");
-        }
-        rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
-        element.value = rupiah;
-        document
-          .querySelectorAll(".topup-card")
-          .forEach((c) => c.classList.remove("active"));
-      }
-
-      function selectTopUpNominal(element, amountStr) {
-        document
-          .querySelectorAll(".topup-card")
-          .forEach((c) => c.classList.remove("active"));
-        element.classList.add("active");
-        document.getElementById("input-topup").value = amountStr;
-      }
-
-      function generateVirtualAccount() {
-        let rawValue = document
-          .getElementById("input-topup")
-          .value.replace(/\./g, "");
-        let amount = parseInt(rawValue);
-        if (isNaN(amount) || amount < 10000) {
-          alert("Minimal top up Rp 10.000");
-          return;
-        }
-        pendingTopUpAmount = amount;
-        document.getElementById("gateway-amount").innerText = formatRp(amount);
-        closeModal("modal-topup");
-        openModal("modal-gateway");
-      }
-
-      function successTopUp() {
-        currentBalance += pendingTopUpAmount;
-        updateBalanceUI();
-        const list = document.getElementById("history-list");
-        if (list.innerHTML.includes("Belum ada")) list.innerHTML = "";
-        list.insertAdjacentHTML(
-          "afterbegin",
-          `<div class="history-item ripple ripple-dark" style="animation: fadeIn 0.4s ease;"><div style="display: flex; gap: 16px; align-items: center;"><div class="history-icon" style="color: #059669; background: #d1fae5; box-shadow:0 4px 15px rgba(5,150,105,0.2);"><i class="fas fa-arrow-down"></i></div><div class="history-detail"><h4>Isi Saldo</h4><p>VA BCA</p></div></div><div class="history-status"><h4 style="color: #059669;">+ ${formatRp(pendingTopUpAmount)}</h4><span class="badge success">Berhasil</span></div></div>`,
-        );
-        alert(
-          `✅ Saldo Rp ${pendingTopUpAmount.toLocaleString("id-ID")} berhasil ditambahkan.`,
-        );
-        closeModal("modal-gateway");
-        attachRipple();
-        switchTab("history");
-      }
-
-      const dataPulsa = [
-        5000, 7000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 50000,
-        60000, 70000, 80000, 90000, 100000, 150000, 200000, 250000, 300000,
-        350000, 400000, 450000, 500000,
-      ];
-      const dataTopUp = [10000, 20000, 50000, 100000, 200000, 500000];
-      const dataInternet = [
-        { nama: "1 GB / 7 Hari", harga: 5500 },
-        { nama: "10 GB / 30 Hari", harga: 75000 },
-        { nama: "50 GB / 30 Hari", harga: 180000 },
-      ];
-      const dataTelepon = [
-        { nama: "Nelpon 100 Menit", harga: 10000 },
-        { nama: "Nelpon Sepuasnya", harga: 80000 },
-      ];
-      const dataML = [
-        { nama: "5 Diamonds", harga: 1500 },
-        { nama: "86 Diamonds", harga: 20000 },
-        { nama: "172 Diamonds", harga: 40000 },
-        { nama: "Weekly Pass", harga: 28000 },
-      ];
-      const dataFF = [
-        { nama: "70 Diamonds", harga: 10000 },
-        { nama: "140 Diamonds", harga: 20000 },
-        { nama: "355 Diamonds", harga: 50000 },
-      ];
-      const dataPUBG = [
-        { nama: "60 UC", harga: 15000 },
-        { nama: "325 UC", harga: 75000 },
-        { nama: "660 UC", harga: 150000 },
-      ];
-      const dataRoblox = [
-        { nama: "80 Roblox", harga: 15000 },
-        { nama: "400 Roblox", harga: 75000 },
-        { nama: "800 Roblox", harga: 150000 },
-      ];
-
-      const formatRp = (angka) =>
-        new Intl.NumberFormat("id-ID", {
-          style: "currency",
-          currency: "IDR",
-          minimumFractionDigits: 0,
-        }).format(angka);
-
-      function checkOperator() {
-        if (currentService !== "pulsa" && currentService !== "data") {
-          document.getElementById("operator-badge").style.display = "none";
-          return;
-        }
-        const input = document
-          .getElementById("input-number")
-          .value.replace(/[^0-9]/g, "");
-        const badge = document.getElementById("operator-badge");
-
-        if (input.length < 4) {
-          badge.style.display = "none";
-          return;
-        }
-
-        const px = input.substring(0, 4);
-        let opName = "",
-          opColor = "";
-
-        if (
-          [
-            "0811",
-            "0812",
-            "0813",
-            "0821",
-            "0822",
-            "0851",
-            "0852",
-            "0853",
-          ].includes(px)
-        ) {
-          opName = "Telkomsel";
-          opColor = "#ed1c24";
-          badge.style.color = "white";
-        } else if (
-          ["0814", "0815", "0816", "0855", "0856", "0857", "0858"].includes(px)
-        ) {
-          opName = "Indosat";
-          opColor = "#ffcb00";
-          badge.style.color = "black";
-        } else if (
-          ["0817", "0818", "0819", "0859", "0877", "0878"].includes(px)
-        ) {
-          opName = "XL";
-          opColor = "#002561";
-          badge.style.color = "white";
-        } else if (["0831", "0832", "0833", "0838"].includes(px)) {
-          opName = "AXIS";
-          opColor = "#612c86";
-          badge.style.color = "white";
-        } else if (["0895", "0896", "0897", "0898", "0899"].includes(px)) {
-          opName = "Tri (3)";
-          opColor = "#0f172a";
-          badge.style.color = "white";
-        } else if (
-          [
-            "0881",
-            "0882",
-            "0883",
-            "0884",
-            "0885",
-            "0886",
-            "0887",
-            "0888",
-            "0889",
-          ].includes(px)
-        ) {
-          opName = "Smartfren";
-          opColor = "#e61c39";
-          badge.style.color = "white";
-        }
-
-        if (opName !== "") {
-          badge.innerText = opName;
-          badge.style.background = opColor;
-          badge.style.display = "block";
-        } else {
-          badge.style.display = "none";
-        }
-      }
-
-      function showService(element, serviceType) {
-        currentService = serviceType;
-        selectedPrice = 0;
-        document
-          .querySelectorAll(".service-item")
-          .forEach((el) => el.classList.remove("active-service"));
-        element.classList.add("active-service");
-        document.getElementById("form-transaction").style.display = "block";
-        [
-          "data-tabs",
-          "game-selector-group",
-          "provider-group",
-          "operator-badge",
-        ].forEach((id) => (document.getElementById(id).style.display = "none"));
-        document.getElementById("input-number").value = "";
-
-        if (serviceType === "pulsa") {
-          document.getElementById("form-title").innerText = "Isi Pulsa";
-          document.getElementById("form-label").innerText = "Nomor HP Tujuan";
-          renderProducts(dataPulsa, "pulsa");
-        } else if (serviceType === "data") {
-          document.getElementById("form-title").innerText = "Paket Data";
-          document.getElementById("form-label").innerText = "Nomor HP Tujuan";
-          document.getElementById("data-tabs").style.display = "flex";
-          renderData("internet");
-        } else if (serviceType === "pln") {
-          document.getElementById("form-title").innerText = "Token Listrik PLN";
-          document.getElementById("form-label").innerText =
-            "Nomor Meter Listrik";
-          renderProducts([20000, 50000, 100000, 200000, 500000], "pln");
-        } else if (serviceType === "game") {
-          document.getElementById("form-title").innerText = "Top Up Game";
-          document.getElementById("game-selector-group").style.display =
-            "block";
-          selectGame("ml", document.querySelector(".game-card"));
-        } else if (serviceType === "ewallet") {
-          document.getElementById("form-title").innerText = "Top Up E-Wallet";
-          document.getElementById("form-label").innerText = "Nomor Akun";
-          document.getElementById("provider-group").style.display = "block";
-          document.getElementById("provider-label").innerText =
-            "Pilih Dompet Digital";
-          document.getElementById("provider-select").innerHTML =
-            `<option>DANA</option><option>GoPay</option><option>OVO</option>`;
-          renderProducts(dataTopUp, "topup");
-        } else if (serviceType === "bank") {
-          document.getElementById("form-title").innerText = "Transfer Bank";
-          document.getElementById("form-label").innerText = "Nomor Rekening";
-          document.getElementById("provider-group").style.display = "block";
-          document.getElementById("provider-label").innerText = "Pilih Bank";
-          document.getElementById("provider-select").innerHTML =
-            `<option>SeaBank</option><option>Bank Jago</option>`;
-          renderProducts(dataTopUp, "topup");
-        } else if (serviceType === "etoll") {
-          document.getElementById("form-title").innerText = "Isi Ulang E-Toll";
-          document.getElementById("form-label").innerText = "Nomor Kartu";
-          document.getElementById("provider-group").style.display = "block";
-          document.getElementById("provider-label").innerText = "Pilih Kartu";
-          document.getElementById("provider-select").innerHTML =
-            `<option>Mandiri e-Money</option><option>BCA Flazz</option>`;
-          renderProducts(dataTopUp, "topup");
-        } else if (serviceType === "tagihan") {
-          document.getElementById("form-title").innerText = "Bayar Tagihan";
-          document.getElementById("form-label").innerText = "ID Pelanggan";
-          document.getElementById("provider-group").style.display = "block";
-          document.getElementById("provider-label").innerText = "Pilih Layanan";
-          document.getElementById("provider-select").innerHTML =
-            `<option>BPJS Kesehatan</option><option>Indihome</option>`;
-          document.getElementById("product-container").innerHTML =
-            '<p style="text-align:center; color:var(--text-muted); font-size:14px; font-weight:800; padding:20px;">Masukkan ID Pelanggan untuk melihat rincian.</p>';
-        }
-
-        setTimeout(
-          () =>
-            document
-              .getElementById("form-transaction")
-              .scrollIntoView({ behavior: "smooth", block: "center" }),
-          200,
-        );
-      }
-
-      function selectGame(gameId, element) {
-        document
-          .querySelectorAll(".game-card")
-          .forEach((el) => el.classList.remove("active"));
-        if (element) element.classList.add("active");
-        currentGame = gameId;
-        const label = document.getElementById("form-label");
-        if (gameId === "ml") {
-          label.innerText = "ID Player (Zone ID)";
-          renderProducts(dataML, "game");
-        } else if (gameId === "ff") {
-          label.innerText = "ID Player Free Fire";
-          renderProducts(dataFF, "game");
-        } else if (gameId === "pubg") {
-          label.innerText = "ID Karakter PUBG";
-          renderProducts(dataPUBG, "game");
-        } else if (gameId === "roblox") {
-          label.innerText = "Username Roblox";
-          renderProducts(dataRoblox, "game");
-        }
-      }
-
-      function renderData(type) {
-        document
-          .getElementById("tab-internet")
-          .classList.toggle("active", type === "internet");
-        document
-          .getElementById("tab-telepon")
-          .classList.toggle("active", type === "telepon");
-        renderProducts(
-          type === "internet" ? dataInternet : dataTelepon,
-          "paket",
-        );
-      }
-
-      function renderProducts(dataArray, type) {
-        const container = document.getElementById("product-container");
-        container.innerHTML = "";
-        dataArray.forEach((item) => {
-          let nama = "",
-            hgInt = 0,
-            hgStr = "";
-          if (type === "pulsa" || type === "pln" || type === "topup") {
-            nama = formatRp(item).replace("Rp", "");
-            hgInt = item + (type === "topup" ? 1000 : 1500);
-            hgStr = formatRp(hgInt);
-          } else if (type === "paket") {
-            nama = item.nama;
-            hgInt = item.harga;
-            hgStr = formatRp(hgInt);
-          } else if (type === "game") {
-            let icon =
-              currentGame === "pubg"
-                ? "💵"
-                : currentGame === "roblox"
-                  ? "🪙"
-                  : "💎";
-            nama = icon + " " + item.nama;
-            hgInt = item.harga;
-            hgStr = formatRp(hgInt);
-          }
-
-          const card = document.createElement("div");
-          card.className = "nominal-card ripple ripple-dark";
-          card.onclick = function () {
-            document
-              .querySelectorAll(".nominal-card")
-              .forEach((c) => c.classList.remove("active"));
-            this.classList.add("active");
-            selectedPrice = hgInt;
-            selectedProductName = nama;
-          };
-          const fSize = type === "paket" || type === "game" ? "13px" : "16px";
-          card.innerHTML = `<h4 style="font-size: ${fSize};">${nama}</h4><p>${hgStr}</p>`;
-          container.appendChild(card);
-        });
-        attachRipple();
-      }
-
-      function openPaymentModal() {
-        if (!isLoggedIn) {
-          alert("Silakan Login terlebih dahulu!");
-          openModal("modal-login");
-          return;
-        }
-        if (document.getElementById("input-number").value === "") {
-          alert("Harap isi Nomor / ID tujuan!");
-          return;
-        }
-        if (selectedPrice === 0) {
-          alert("Pilih nominal terlebih dahulu!");
-          return;
-        }
-        updateBalanceUI();
-        openModal("modal-payment");
-      }
-
-      function processPayment(method) {
-        if (method === "Saldo") {
-          if (currentBalance >= selectedPrice) {
-            currentBalance -= selectedPrice;
-            updateBalanceUI();
-            const list = document.getElementById("history-list");
-            if (list.innerHTML.includes("Belum ada")) list.innerHTML = "";
-            let icon = "fa-mobile-alt",
-              col = "#3b82f6",
-              bg = "#eff6ff";
-            if (currentService === "game") {
-              icon = "fa-gamepad";
-              col = "#6366f1";
-              bg = "#e0e7ff";
-            } else if (
-              currentService === "ewallet" ||
-              currentService === "bank"
-            ) {
-              icon = "fa-wallet";
-              col = "#059669";
-              bg = "#d1fae5";
-            }
-
-            list.insertAdjacentHTML(
-              "afterbegin",
-              `<div class="history-item ripple ripple-dark" style="animation: fadeIn 0.4s ease;"><div style="display:flex; gap:16px; align-items:center;"><div class="history-icon" style="color:${col}; background:${bg}; box-shadow:0 4px 10px rgba(0,0,0,0.05);"><i class="fas ${icon}"></i></div><div><h4>${selectedProductName}</h4><p>${document.getElementById("input-number").value}</p></div></div><div><h4>${formatRp(selectedPrice)}</h4><span class="badge success">Berhasil</span></div></div>`,
-            );
-            alert(
-              `✅ Transaksi Berhasil diproses!\nSaldo dipotong: Rp ${selectedPrice.toLocaleString("id-ID")}.`,
-            );
-            closeModal("modal-payment");
-            selectedPrice = 0;
-            document.getElementById("input-number").value = "";
-            document
-              .querySelectorAll(".nominal-card")
-              .forEach((c) => c.classList.remove("active"));
-            switchTab("history");
-            attachRipple();
-          } else {
-            alert(
-              `❌ Saldo tidak cukup!\nSisa Saldo: ${formatRp(currentBalance)}`,
-            );
-          }
-        }
-      }
-
-      function updateBalanceUI() {
-        if (!isBalanceHidden)
-          document.getElementById("display-balance").innerText =
-            formatRp(currentBalance);
-        if (document.getElementById("modal-balance"))
-          document.getElementById("modal-balance").innerText =
-            formatRp(currentBalance);
-      }
-
-      function switchTab(tab) {
-        if ((tab === "profile" || tab === "history") && !isLoggedIn) {
-          openModal("modal-login");
-          return;
-        }
-        document.getElementById("view-home").style.display =
-          tab === "home" ? "block" : "none";
-        document.getElementById("view-history").style.display =
-          tab === "history" ? "block" : "none";
-        document.getElementById("view-profile").style.display =
-          tab === "profile" ? "block" : "none";
-        document
-          .getElementById("nav-home")
-          .classList.toggle("active", tab === "home");
-        document
-          .getElementById("nav-history")
-          .classList.toggle("active", tab === "history");
-        document
-          .getElementById("nav-profile")
-          .classList.toggle("active", tab === "profile");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      function openModal(id) {
-        document.getElementById(id).style.display = "flex";
-      }
-      function closeModal(id) {
-        document.getElementById(id).style.display = "none";
-      }
-
-      // Inisialisasi tampilan awal dengan data default
-      updateProfileUI();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
