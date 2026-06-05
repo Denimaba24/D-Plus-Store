@@ -41,8 +41,6 @@
         font-family: "Plus Jakarta Sans", sans-serif;
         -webkit-tap-highlight-color: transparent;
       }
-
-      /* Mencegah efek scroll berlebih dan blok teks otomatis di aplikasi */
       body {
         background-color: #cbd5e1;
         display: flex;
@@ -341,7 +339,7 @@
         animation: none;
       }
 
-      /* === GRID MENU PREMIUM (ANIMASI GETAR/KEDIP BERGELOMBANG) === */
+      /* === GRID MENU PREMIUM === */
       .section-title {
         padding: 0 24px;
         font-size: 18px;
@@ -392,7 +390,6 @@
         position: relative;
         animation: iconVibrate 5s infinite;
       }
-
       .service-item:nth-child(1) .service-icon {
         animation-delay: 0s;
       }
@@ -484,7 +481,6 @@
         text-align: center;
       }
 
-      /* Warna Premium Ikon */
       .bg-pulsa {
         background: linear-gradient(135deg, #3b82f6, #1d4ed8);
       }
@@ -531,8 +527,6 @@
         margin-bottom: 12px;
         font-weight: 800;
       }
-
-      /* PEMBARUAN PADA INPUT WRAPPER AGAR LOGO OPERATOR SEMPURNA */
       .input-wrapper {
         position: relative;
         width: 100%;
@@ -540,7 +534,7 @@
         align-items: center;
       }
       .input-wrapper input {
-        padding-right: 90px; /* Jarak agar teks tidak tertutup logo operator */
+        padding-right: 90px;
       }
 
       .input-group input,
@@ -806,7 +800,7 @@
         color: #059669;
       }
 
-      /* === PEMBARUAN BOTTOM NAV DOCKED (SISI PRESISI ANDROID/IOS) === */
+      /* === BOTTOM NAV DOCKED === */
       .bottom-nav {
         position: fixed;
         bottom: 0;
@@ -820,8 +814,8 @@
         display: flex;
         justify-content: space-between;
         padding: 14px 24px calc(14px + env(safe-area-inset-bottom)) 24px;
-        border-top: 1.5px solid rgba(0, 0, 0, 0.08); /* Sisi border presisi atas */
-        border-radius: 36px 36px 0 0; /* Lengkungan elegan di sudut atas saja */
+        border-top: 1.5px solid rgba(0, 0, 0, 0.08);
+        border-radius: 36px 36px 0 0;
         box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08);
         z-index: 99;
       }
@@ -845,8 +839,6 @@
         margin-bottom: 6px;
         transition: var(--transition);
       }
-
-      /* Indikator Menu Aktif berbentuk kotak melingkar presisi */
       .nav-item.active {
         color: var(--primary-light);
         background: rgba(37, 99, 235, 0.08);
@@ -953,6 +945,7 @@
   </head>
   <body>
     <div class="app-container">
+      <!-- === 1. BERANDA === -->
       <div id="view-home" class="fade-in">
         <div class="header-section">
           <div class="orb orb-1"></div>
@@ -991,6 +984,7 @@
           >
             Pelanggan D'Plus Store
           </h2>
+          <!-- SEMBOYAN KILAT -->
           <div class="slogan">
             <i class="fas fa-bolt" style="font-size: 16px"></i> TRANSAKSI
             SECEPAT KILAT
@@ -1007,7 +1001,7 @@
                 onclick="toggleBalance(event)"
               ></i>
             </p>
-            <h3 id="display-balance">Rp 500.000</h3>
+            <h3 id="display-balance">Rp 100.000</h3>
           </div>
           <button class="btn-topup ripple" onclick="openTopUpModal()">
             <i class="fas fa-plus-circle" style="font-size: 16px"></i> Top Up
@@ -1060,6 +1054,7 @@
           </div>
         </div>
 
+        <!-- FORM TRANSAKSI -->
         <div class="form-container fade-in" id="form-transaction">
           <h3
             class="section-title"
@@ -1083,7 +1078,7 @@
                 font-weight: 800;
                 display: block;
               "
-              >Pilih Game Favorit</label
+              >Pilih Game Favoritmu</label
             >
             <div class="game-grid">
               <div
@@ -1159,10 +1154,11 @@
         </div>
       </div>
 
+      <!-- === 2. RIWAYAT TRANSAKSI === -->
       <div
         id="view-history"
         class="history-container fade-in"
-        style="display: none"
+        style="display: none; padding-bottom: 120px"
       >
         <h2
           style="
@@ -1194,10 +1190,11 @@
         </div>
       </div>
 
+      <!-- === 3. PROFIL PENGGUNA DINAMIS === -->
       <div
         id="view-profile"
         class="history-container fade-in"
-        style="display: none"
+        style="display: none; padding-bottom: 120px"
       >
         <h2
           style="
@@ -1242,29 +1239,21 @@
               border: 4px solid white;
             "
           >
-            <i class="fas fa-user-graduate"></i>
+            <i class="fas fa-user"></i>
           </div>
           <div style="width: 100%">
             <h3
+              id="profile-name"
               style="
                 font-size: 26px;
                 font-weight: 900;
                 color: var(--text-dark);
                 letter-spacing: -0.5px;
-              "
-            >
-              Deni
-            </h3>
-            <p
-              style="
-                color: var(--primary-light);
-                font-size: 15px;
-                font-weight: 800;
                 margin-bottom: 20px;
               "
             >
-              Mahasiswa Teknik Informatika
-            </p>
+              Pengguna
+            </h3>
 
             <div
               style="
@@ -1305,9 +1294,10 @@
                   letter-spacing: 1px;
                 "
               >
-                <i class="fas fa-id-card" style="margin-right: 6px"></i> ID
-                Virtual Mahasiswa
+                <i class="fas fa-id-card" style="margin-right: 6px"></i>
+                Identitas Pribadi
               </p>
+
               <div
                 style="
                   display: flex;
@@ -1323,35 +1313,35 @@
                     font-weight: 700;
                     color: var(--text-muted);
                   "
-                  >Nomor NBI</span
+                  >Nomor HP</span
                 >
                 <span
+                  id="profile-phone"
                   style="
                     font-size: 15px;
                     font-weight: 900;
                     color: var(--text-dark);
                   "
-                  >1462400131</span
+                  >081234567890</span
                 >
               </div>
-              <div style="display: flex; flex-direction: column">
+              <div style="display: flex; justify-content: space-between">
                 <span
                   style="
                     font-size: 14px;
                     font-weight: 700;
                     color: var(--text-muted);
-                    margin-bottom: 4px;
                   "
-                  >Perguruan Tinggi</span
+                  >Email Aktif</span
                 >
                 <span
+                  id="profile-email"
                   style="
-                    font-size: 15px;
+                    font-size: 14px;
                     font-weight: 900;
                     color: var(--text-dark);
-                    line-height: 1.4;
                   "
-                  >Universitas 17 Agustus 1945 Surabaya</span
+                  >user@email.com</span
                 >
               </div>
             </div>
@@ -1471,6 +1461,7 @@
         </div>
       </div>
 
+      <!-- === BOTTOM NAV DOCKED === -->
       <div class="bottom-nav">
         <div
           class="nav-item ripple ripple-dark active"
@@ -1495,6 +1486,8 @@
         </div>
       </div>
 
+      <!-- === MODALS === -->
+      <!-- Modal Login & Register Dinamis -->
       <div class="modal-overlay" id="modal-login">
         <div class="modal-content">
           <div
@@ -1531,6 +1524,7 @@
               Daftar Baru
             </button>
           </div>
+          <!-- FORM LOGIN -->
           <div id="form-login-area">
             <div class="input-group">
               <label>Nomor HP / Email</label
@@ -1548,25 +1542,38 @@
               Sekarang
             </button>
           </div>
+          <!-- FORM DAFTAR (MENYIMPAN DATA) -->
           <div id="form-register-area" style="display: none">
             <div class="input-group">
               <label>Nama Lengkap</label
-              ><input type="text" placeholder="Sesuai KTP/KTM" />
+              ><input type="text" id="reg-name" placeholder="Sesuai KTP" />
             </div>
             <div class="input-group">
               <label>Nomor HP Aktif</label
-              ><input type="tel" placeholder="08xxx" />
+              ><input type="tel" id="reg-phone" placeholder="08xxx" />
+            </div>
+            <div class="input-group">
+              <label>Email Aktif</label
+              ><input
+                type="email"
+                id="reg-email"
+                placeholder="email@contoh.com"
+              />
             </div>
             <div class="input-group" style="margin-bottom: 28px">
               <label>Buat PIN Baru</label
-              ><input type="password" placeholder="6 Digit Angka" />
+              ><input
+                type="password"
+                id="reg-pin"
+                placeholder="6 Digit Angka"
+              />
             </div>
             <button
               class="btn-primary ripple"
               style="
                 background: linear-gradient(135deg, var(--success), #059669);
               "
-              onclick="loginUser('Akun Berhasil Dibuat!')"
+              onclick="registerUser()"
             >
               <i class="fas fa-user-plus" style="margin-right: 8px"></i> Daftar
               & Masuk
@@ -1575,6 +1582,7 @@
         </div>
       </div>
 
+      <!-- Modal Top Up -->
       <div class="modal-overlay" id="modal-topup">
         <div class="modal-content">
           <div
@@ -1653,6 +1661,7 @@
         </div>
       </div>
 
+      <!-- Modal Gateway Simulasi -->
       <div class="modal-overlay" id="modal-gateway">
         <div class="modal-content" style="text-align: center">
           <div
@@ -1727,7 +1736,7 @@
                 font-weight: 800;
               "
             >
-              A/N: DPLUS DENI
+              A/N: DPLUS Store PENGGUNA
             </p>
             <div
               style="
@@ -1770,6 +1779,7 @@
         </div>
       </div>
 
+      <!-- Modal Pembayaran Transaksi -->
       <div class="modal-overlay" id="modal-payment">
         <div class="modal-content">
           <div
@@ -1823,7 +1833,7 @@
                   color: var(--primary);
                 "
               >
-                Saldo D'Plus
+                Saldo D'Plus Store
               </h4>
               <p
                 style="
@@ -1891,7 +1901,15 @@
       </div>
     </div>
 
+    <!-- === SCRIPT JAVASCRIPT === -->
     <script>
+      // === SISTEM DATA BASE SEDERHANA ===
+      let userData = {
+        name: "Pengguna",
+        phone: "081234567890",
+        email: "user@email.com",
+      };
+
       let isLoggedIn = false;
       let currentBalance = 500000;
       let isBalanceHidden = false;
@@ -1924,7 +1942,7 @@
 
       // === FITUR MATA (HIDE/SHOW SALDO) ===
       function toggleBalance(e) {
-        e.stopPropagation(); // Mencegah klik menembus ke card
+        e.stopPropagation();
         isBalanceHidden = !isBalanceHidden;
         const balElement = document.getElementById("display-balance");
         const eyeIcon = document.getElementById("eye-icon");
@@ -1950,18 +1968,55 @@
         document.getElementById("form-register-area").style.display =
           type === "register" ? "block" : "none";
       }
+
+      function registerUser() {
+        const nameInput = document.getElementById("reg-name").value;
+        const phoneInput = document.getElementById("reg-phone").value;
+        const emailInput = document.getElementById("reg-email").value;
+        const pinInput = document.getElementById("reg-pin").value;
+
+        if (!nameInput || !phoneInput || !emailInput || !pinInput) {
+          alert("Gagal! Harap isi semua kolom pendaftaran dengan lengkap.");
+          return;
+        }
+
+        userData.name = nameInput;
+        userData.phone = phoneInput;
+        userData.email = emailInput;
+
+        isLoggedIn = true;
+        closeModal("modal-login");
+        updateProfileUI();
+
+        document.getElementById("reg-name").value = "";
+        document.getElementById("reg-phone").value = "";
+        document.getElementById("reg-email").value = "";
+        document.getElementById("reg-pin").value = "";
+
+        alert("✅ Akun Berhasil Dibuat!\nSelamat datang, " + userData.name);
+        switchTab("profile");
+      }
+
       function loginUser(msg) {
         isLoggedIn = true;
         closeModal("modal-login");
-        document.getElementById("header-user-text").innerText = "Deni";
+        updateProfileUI();
         alert(msg);
         switchTab("profile");
       }
+
       function logoutUser() {
         isLoggedIn = false;
-        alert("Berhasil keluar.");
+        alert("Berhasil keluar dengan aman.");
         document.getElementById("header-user-text").innerText = "Masuk Akun";
         switchTab("home");
+      }
+
+      function updateProfileUI() {
+        document.getElementById("header-user-text").innerText = userData.name;
+        document.getElementById("profile-name").innerText = userData.name;
+        document.getElementById("profile-phone").innerText = userData.phone;
+        document.getElementById("profile-email").innerText = userData.email;
       }
 
       // === SIMULASI TOP UP (AUTO FORMAT TITIK) ===
@@ -2087,7 +2142,7 @@
         }
         const input = document
           .getElementById("input-number")
-          .value.replace(/[^0-9]/g, ""); // Pastikan hanya membaca angka
+          .value.replace(/[^0-9]/g, "");
         const badge = document.getElementById("operator-badge");
 
         if (input.length < 4) {
@@ -2099,7 +2154,6 @@
         let opName = "",
           opColor = "";
 
-        // Logika Operator Diperbarui agar kebal terhadap kesalahan ketik
         if (
           [
             "0811",
@@ -2423,6 +2477,9 @@
       function closeModal(id) {
         document.getElementById(id).style.display = "none";
       }
+
+      // Inisialisasi tampilan awal dengan data default
+      updateProfileUI();
     </script>
   </body>
 </html>
